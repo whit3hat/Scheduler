@@ -21,10 +21,24 @@ function today (){
 
 //display current day 
 
+//Poplulate screen with hour blocks for the day
+
 //change colors of hour blocks
 
-//input schedule information
+//current hour 
 
+//past event
+
+//future event
+
+//save button
+
+//input schedule information
+function event (){
+    
 //store event information with local storage
+    localStorage.setItem('Event:' , event);
+};
+
 
 
