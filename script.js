@@ -2,13 +2,22 @@
 
 //variables for HTML connectors
 const hour = document.getElementsByClassName('#container');
-//const currentDay = document.getElementById('.currentDay');
+const currentDay = document.getElementById('.currentDay');
 
-//Get current day 
-const currentDay = '2020-01-09';
-var dateFormat = 'll';
-const today = moment(currentDay).format(dateFormat);
-console.log(currentDay);
+//fucntion to call and get todays date
+today();
+
+//Format option for moment date
+const dateFormat = 'll';
+
+
+
+//Function to get current day and save to local storage
+function today (){
+    const date = moment();
+    date.format('MMM D YYYY');
+    localStorage.setItem('Today: ' , date);
+};
 
 //display current day 
 
