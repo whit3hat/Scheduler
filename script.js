@@ -2,12 +2,14 @@
 let currently = $("#currentDay");
 let nowHour = moment().format("H");
 
+//setting and getting local current time to display and use for functions below
 setInterval(() => {
     let now =moment();
     let date = now.format("dddd, MMMM, hh:mm a");
     currently.text(date);
 }, 100);
 
+//storing values added to event to local storage
 $(".saveBtn").click(function () { 
     $('input[type="text"]').each(function () { 
         const id = $(this).attr('id'); 
@@ -16,6 +18,7 @@ $(".saveBtn").click(function () {
     });
 });
 
+//getting items from local storage to display
 $('input[type="text"]').each(function () { 
     const getting = $(this).attr('id'); 
     const letsGrab = localStorage.getItem(getting); 
@@ -35,6 +38,7 @@ colorChecks(18, "#sixPm");
 colorChecks(19, "#sevenPM");
 colorChecks(20, "#eightPm");
 
+//function to check the time of the event and compare to current time
 function colorChecks(time, theId) { 
     if (nowHour > time) { 
         $(theId).addClass("past"); 
