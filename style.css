@@ -2,6 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  text-align-last: center;
 }
 
 textarea{
@@ -10,17 +11,12 @@ textarea{
   resize: none;
   color: #000000;
   border-left: 1px solid black;
-  padding: 10px;
 }
 
-hr{
-  display: block;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  margin-left: auto;
-  margin-right: auto;
-  border-style: inset;
-  border-width: 1px;
+#container{
+  font-variant-caps: small-caps;
+  align-items: center;
+  text-align-last: center;
 }
 
 .jumbotron {
@@ -42,6 +38,8 @@ hr{
 .time-block{
   text-align: center;
   border-radius: 15px;
+  display: inline-block;
+  margin-left: 50px;
 }
 .row {
   white-space: pre-wrap;
