@@ -13,6 +13,16 @@ textarea{
   padding: 10px;
 }
 
+hr{
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+}
+
 .jumbotron {
   text-align: center;
   background-color: transparent;
@@ -22,14 +32,17 @@ textarea{
 }
 
 .description{
+  margin-left:  25px;
   white-space: pre-wrap;
+  width: 500px;
+  text-align: center;
+  font-size: 12px;
 }
 
 .time-block{
   text-align: center;
   border-radius: 15px;
 }
-
 .row {
   white-space: pre-wrap;
   height: 80px;

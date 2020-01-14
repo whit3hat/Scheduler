@@ -1,50 +1,44 @@
-//variables
+let currently = $("#currentDay");
+let nowHour = moment().format("H");
 
-//variables for HTML connectors
-const hour = document.getElementsByClassName('#container');
-const currentDay = document.getElementById('.currentDay');
+setInterval(() => {
+    let now =moment();
+    let date = now.format("dddd, MMMM, hh:mm a");
+    currently.text(date);
+}, 100);
 
-//fucntion to call and get todays date
-today();
-
-//Format option for moment date
-const dateFormat = 'll';
-
-
-
-//Function to get current day and save to local storage
-function today (){
-    const date = moment();
-    date.format('MMM, Do, YYYY');
-    localStorage.setItem('Today: ' , date);
-};
-
-//function for moment calendar
-moment().calendar(referenceTime);
-moment().calendar(null, {
-
+$(".saveBtn").click(function () { 
+    $('input[type="text"]').each(function () { 
+        const id = $(this).attr('id'); 
+        const value = $(this).val(); 
+        localStorage.setItem(id, value);
+    });
 });
 
-//display current day 
+$('input[type="text"]').each(function () { 
+    const getting = $(this).attr('id'); 
+    const letsGrab = localStorage.getItem(getting); 
+    document.getElementById(getting).value = letsGrab; 
+});
 
-//Poplulate screen with hour blocks for the day
- $(`.time-block`)
-//change colors of hour blocks
+colorChecks(9, "#nineAm"); 
+colorChecks(10, "#tenAm"); 
+colorChecks(11, "#eleven"); 
+colorChecks(12, "#noon"); 
+colorChecks(13, "#onePm");
+colorChecks(14, "#twoPm"); 
+colorChecks(15, "#threePm"); 
+colorChecks(16, "#fourPm"); 
+colorChecks(17, "#fivePm"); 
 
-//current hour 
-$(`.present`)
-//past event
-$(`.past`)
-//future event
-$(`.future`)
-//save button
-$(`.saveBtn`)
-//input schedule information
-function event (){
-    
-//store event information with local storage
-    localStorage.setItem('Event:' , event);
-};
-
-
-
+function colorChecks(time, theId) { 
+    if (nowHour > time) { 
+        $(theId).addClass("past"); 
+    }
+    if (nowHour < time) { 
+        $(theId).addClass("future"); 
+    }
+    if (nowHour == time) { 
+        $(theId).addClass("present");
+    }
+}
