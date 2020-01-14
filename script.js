@@ -1,3 +1,4 @@
+//variables
 let currently = $("#currentDay");
 let nowHour = moment().format("H");
 
@@ -20,7 +21,7 @@ $('input[type="text"]').each(function () {
     const letsGrab = localStorage.getItem(getting); 
     document.getElementById(getting).value = letsGrab; 
 });
-
+//color checks for hours
 colorChecks(9, "#nineAm"); 
 colorChecks(10, "#tenAm"); 
 colorChecks(11, "#eleven"); 
@@ -30,6 +31,9 @@ colorChecks(14, "#twoPm");
 colorChecks(15, "#threePm"); 
 colorChecks(16, "#fourPm"); 
 colorChecks(17, "#fivePm"); 
+colorChecks(18, "#sixPm");
+colorChecks(19, "#sevenPM");
+colorChecks(20, "#eightPm");
 
 function colorChecks(time, theId) { 
     if (nowHour > time) { 
