@@ -36,7 +36,7 @@ colorChecks(15, "#threePm");
 colorChecks(16, "#fourPm"); 
 colorChecks(17, "#fivePm"); 
 colorChecks(18, "#sixPm");
-colorChecks(19, "#sevenPM");
+colorChecks(19, "#sevenPm");
 colorChecks(20, "#eightPm");
 
 //function to check the time of the event and compare to current time
