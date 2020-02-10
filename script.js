@@ -2,9 +2,10 @@
 let currently = $("#currentDay");
 let nowHour = moment().format("H");
 
+
 //setting and getting local current time to display and use for functions below
 setInterval(() => {
-    let now =moment();
+    let now = moment();
     let date = now.format("dddd, MMMM, hh:mm a");
     currently.text(date);
 }, 100);
@@ -49,4 +50,6 @@ function colorChecks(time, theId) {
     if (nowHour == time) { 
         $(theId).addClass("present");
     }
+
+    console.log('time: ' , time , 'theID: ' , theId);
 }
